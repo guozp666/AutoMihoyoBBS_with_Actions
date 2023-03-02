@@ -32,20 +32,20 @@ def check_passwd():
 def update_cookie():
     with open("mihoyo/config/config.yaml.example", mode='r', encoding='utf-8') as f:
         conf = yaml.load(f.read(), Loader=yaml.FullLoader)
-    conf['account']['cookie'] = cookie
+    # conf['account']['cookie'] = cookie
     with open("mihoyo/config/config.yaml", mode='w', encoding='utf-8') as f:
         f.write(yaml.dump(conf))
     config.load_config()
     login.login()
     with open("mihoyo/config/config.yaml", mode='r', encoding='utf-8') as f:
         conf = yaml.load(f.read(), Loader=yaml.FullLoader)
-    if conf['account']['cookie'] == 'CookieError':
-        exit(1)
-    else :
-        if not os.path.exists('config/user'):
-            os.makedirs('config/user')
-        with open(f"config/user/{name}", mode='wb') as f:
-            f.write(encryption(conf['account']))
+    #if conf['account']['cookie'] == 'CookieError':
+    #    exit(1)
+    #else :
+    if not os.path.exists('config/user'):
+        os.makedirs('config/user')
+    with open(f"config/user/{name}", mode='wb') as f:
+        f.write(encryption(conf['account']))
     print('配置保存成功！')
 
 def encryption(text):
