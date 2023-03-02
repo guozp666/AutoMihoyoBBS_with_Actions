@@ -28,7 +28,7 @@ jobs:
         pip install pipreqs
         pipreqs mihoyo/
         pip3 install -r mihoyo/requirements.txt
-        pip3 install pycrypto
+        easy_install pycrypto
   
     - name: Add Cookie
       env:
