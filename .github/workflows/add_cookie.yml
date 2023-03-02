@@ -20,7 +20,7 @@ jobs:
 
     - name: Clone source
       run: |
-        git clone https://github.com/Womsxd/AutoMihoyoBBS.git mihoyo
+        git clone https://github.com/guozp666/AutoMihoyoBBS_with_Actions.git mihoyo
 
     - name: Install dependencies
       run: |
