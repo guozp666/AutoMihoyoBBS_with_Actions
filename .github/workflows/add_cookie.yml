@@ -25,6 +25,7 @@ jobs:
     - name: Install dependencies
       run: |
         python3 -m pip install --upgrade pip
+        python3 setup.py install
         pip install pipreqs
         pipreqs mihoyo/
         pip3 install -r mihoyo/requirements.txt
